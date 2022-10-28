@@ -19,9 +19,11 @@ app.get('/',(req,resp) => {
     //set the status code
     resp.status(200)
     //send response
-    resp.send(`<h1>The time is now  ${new Date()} </h1>`)
+    resp.send(`<h1>The time is now  ${new Date()} </h1><img src="/static/hello.jpg">`)
     
 })
+//serve static resource
+app.use("/static",express.static(__dirname + "/static"))
 
 //start our web application
 app.listen(port,() =>{
